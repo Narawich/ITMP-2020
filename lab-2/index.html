@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>The Members - ITKMITL Multimedia Programming 2563</title>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<link rel="stylesheet" type="text/css" href="lab.css">
 </head>
+
 <body>
 	<div id="app">
-		
+		about
+		<h3>username {{person.username}}</h3>
+		<h3>username {{person.name}}</h3>
+		<h3>username {{person.email}}</h3>
+		<h3>username {{person.website}}</h3>
+		<h3>username {{person.company.name}}</h3>
+		<button  @click ="isthisgood">เขาเป็นสมาขิกหรือไม่</button>
+		<h2>{{yesno.answer}}</h2>
+
+		users
+		<h2 v-for="u in users" :data-id="u.id" @click="viewBio(u)">
+			<img :src="`https://picsum.photos/id/4${u.id}/300/300`" alt="">
+			{{u.username}}</h2>
+
 	</div>
-	
+
 
 	<script>
 		fetch('https://jsonplaceholder.typicode.com/users')
-		.then(response => response.json())
-		.then(json => {console.log(json)})
+			.then(response => response.json())
+			.then(json => {
+				console.log(json)
+				app.users = json
+				app.person = json[0]
+			})
 		let app = new Vue({
 			el: '#app',
+			methods: {
+				viewBio: function (user) {
+					this.person = user
+				},
+				isthisgood: function () {
+					fetch('https://yesno.wtf/api')
+						.then(response => response.json())
+						.then(json => {
+							console.log(json)
+							app.yesno = json
+						})
+				}
+			},
 			data: {
-				users :[],
-				person:{
-					id:0,
-					name:'..loading',
-					username:'..loading',
-					email:'..loading',
-					website:'..loading',
-					company:{
-						name : '..loading',
-					}
-				}	
-			}
+				yesno: {
+					"answer": "อยากรู้ คลิกเลย",
+					"forced": false,
+					"image": ""
+				},
+				person: {
+				"id": 1,
+				"name": "______",
+				"username": "____",
+				"email": "________",
+				"website": "_______",
+				"company": {
+					"name": "________",
+					"catchPhrase": "Multi-layered client-server neural-net",
+					"bs": "harness real-time e-markets"
+				}
+			},
+			users: [{
+				"id": 1,
+				"name": "______",
+				"username": "____",
+				"email": "________",
+				"website": "_______",
+				"company": {
+					"name": "________",
+					"catchPhrase": "Multi-layered client-server neural-net",
+					"bs": "harness real-time e-markets"
+				}
+			}]
+		}
+
 		})
 
 	</script>
 </body>
+
 </html>
