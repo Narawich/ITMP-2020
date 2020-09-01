@@ -5,12 +5,14 @@
 	<link rel="stylesheet" type="text/css" href="../src/reset.css">
 	<link rel="stylesheet" type="text/css" href="lab.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Kanit&family=KoHo:wght@200&display=swap" rel="stylesheet">
 </head>
 <body>
 	<div id="canvas">
 		<section id="canvas_header">
 			<div>
-				เหลือเวลา {{time}} วินาที
+				
+				<font color="#9EF048"> เหลือเวลา {{time}} วินาที </font>
 			</div>
 		</section>
 		<section id="canvas_main">
@@ -28,8 +30,8 @@
 			</main>
 		</section>
 		<section id="canvas_footer">
-			<div>
-				{{score}} คะแนน
+			<div >
+				<font color="#FF32B1">{{score}} คะแนน </font>
 			</div>
 		</section>
 	</div>
@@ -52,7 +54,7 @@
 				score:0, //คะแนนเริ่มต้น
 				pick:1, //หมายเลขวงกลมที่จะสีแตกต่างจากก้อนอื่นๆ
 				l:50,//ความสว่างของสีทั่วไปในรอบนี้
-				
+
 			},
 			methods: {
 				check: function(status){
