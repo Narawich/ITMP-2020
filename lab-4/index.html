@@ -12,7 +12,7 @@
 		<section id="canvas_header">
 			<div>
 				
-				<font color="#9EF048"> เหลือเวลา {{time}} วินาที </font>
+				 เหลือเวลา {{time}} วินาที 
 			</div>
 		</section>
 		<section id="canvas_main">
@@ -31,7 +31,7 @@
 		</section>
 		<section id="canvas_footer">
 			<div >
-				<font color="#FF32B1">{{score}} คะแนน </font>
+				{{score}} คะแนน
 			</div>
 		</section>
 	</div>
@@ -39,6 +39,7 @@
 	<script>
 		let picklight = "20%" //เลือกว่ารอบนี้ อันพิเศษจะมีความสว่าง 20%
 		document.registerElement('a-dot') //ให้ vue รู้จัก a-dot
+		
 
 		function rand(start,stop){//สร้างฟังก์ชัน random ไว้ใช้
 			let shift = (stop-start)+1
