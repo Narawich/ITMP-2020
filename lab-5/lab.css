@@ -17,7 +17,7 @@ body{
 #canvas_header,
 #canvas_footer{
 	background-color: brown;
-	background-image: url('tile-grass.jpg');
+	background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20191031/pngtree-seamless-pattern-with-banana-cute-background-vector-image_321207.jpg');
 	background-size: 20%;
 	height: 50px;
 	color: white;
@@ -25,7 +25,7 @@ body{
 }
 #canvas_main{
 	background-color: grey;
-	background-image: url('tile-rock.jpg');
+	background-image: url('https://i.pinimg.com/originals/3c/75/ee/3c75ee00a1253cd102f5434f033936e3.jpg');
 	background-size: 20%;
 	height: 400px;
 	opacity: .2;
@@ -84,7 +84,7 @@ div.box{
 }
 .box._path{
 	background-color: black;
-	background-image: url('tile-wood.jpg');
+	background-image: url('https://cdn.pixabay.com/photo/2016/07/29/08/20/leaf-1551204_960_720.jpg');
 	background-size: cover;
 	transform: rotate(0deg);
 }
